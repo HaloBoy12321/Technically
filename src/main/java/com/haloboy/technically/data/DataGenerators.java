@@ -3,7 +3,7 @@ package com.haloboy.technically.data;
 import com.haloboy.technically.Technically;
 import com.haloboy.technically.data.client.ModBlockStateProvider;
 import com.haloboy.technically.data.client.ModItemModelProvider;
-import com.haloboy.technically.data.client.ModItemTagsProviderALT;
+import com.haloboy.technically.data.client.ModItemTagsProvider;
 import com.haloboy.technically.data.client.ModLangProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -25,6 +25,6 @@ public class DataGenerators {
 
         ModBlockTagsProvider blockTags = new ModBlockTagsProvider(gen, existingFileHelper);
         gen.addProvider(blockTags);
-        gen.addProvider(new ModItemTagsProviderALT(gen, blockTags ,existingFileHelper));
+        gen.addProvider(new ModItemTagsProvider(gen, blockTags ,existingFileHelper));
     }
 }

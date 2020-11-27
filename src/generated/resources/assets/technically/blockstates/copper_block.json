@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "technically:block/copper_block"
+    }
+  }
+}

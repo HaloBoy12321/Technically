@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "technically:block/tin_block"
+    }
+  }
+}
