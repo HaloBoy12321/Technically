@@ -3,10 +3,12 @@ package com.haloboy.technically.data;
 import com.haloboy.technically.Technically;
 import com.haloboy.technically.setup.ModBlocks;
 import com.haloboy.technically.setup.ModItems;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.IFinishedRecipe;
-import net.minecraft.data.ShapedRecipeBuilder;
-import net.minecraft.data.ShapelessRecipeBuilder;
+import net.minecraft.advancements.criterion.ImpossibleTrigger;
+import net.minecraft.data.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.loot.functions.Smelt;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.IItemProvider;
 import net.minecraftforge.common.data.ForgeRecipeProvider;
 
@@ -21,6 +23,7 @@ public class ModRecipeProvider extends ForgeRecipeProvider {
     @Override
     protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
         registerCraftingItems(consumer);
+        registerSmelting(consumer);
     }
     private void registerCraftingItems(Consumer<IFinishedRecipe> consumer) {
         compressor(consumer, ModBlocks.SILVER_BLOCK.get(), ModItems.SILVER_INGOT.get(), "silver_block");
@@ -32,6 +35,35 @@ public class ModRecipeProvider extends ForgeRecipeProvider {
         compressor(consumer, ModItems.COPPER_INGOT.get(), ModItems.COPPER_NUGGET.get(),"copper_ingot");
         compressor(consumer, ModItems.TIN_INGOT.get(), ModItems.TIN_NUGGET.get(),"tin_ingot");
         compressor(consumer, ModItems.LEAD_INGOT.get(), ModItems.LEAD_NUGGET.get(),"lead_ingot");
+    }
+    private void registerSmelting(Consumer<IFinishedRecipe> consumer) {
+        smeltingAndBlasting(consumer, "silver_ore", ModBlocks.SILVER_ORE.get(), ModItems.SILVER_INGOT.get());
+        smeltingAndBlasting(consumer, "copper_ore", ModBlocks.COPPER_ORE.get(), ModItems.COPPER_INGOT.get());
+        smeltingAndBlasting(consumer, "tin_ore", ModBlocks.TIN_ORE.get(), ModItems.TIN_INGOT.get());
+        smeltingAndBlasting(consumer, "lead_ore", ModBlocks.LEAD_ORE.get(), ModItems.LEAD_INGOT.get());
+
+        smeltingAndBlasting(consumer, "silver_dust", ModItems.SILVER_DUST.get(), ModItems.SILVER_INGOT.get());
+        smeltingAndBlasting(consumer, "copper_dust", ModItems.COPPER_DUST.get(), ModItems.COPPER_INGOT.get());
+        smeltingAndBlasting(consumer, "tin_dust", ModItems.TIN_DUST.get(), ModItems.TIN_INGOT.get());
+        smeltingAndBlasting(consumer, "lead_dust", ModItems.LEAD_DUST.get(), ModItems.LEAD_INGOT.get());
+    }
+    private void smeltingAndBlasting(Consumer<IFinishedRecipe> consumer, String id, IItemProvider ingredientItem, IItemProvider result) {
+        Ingredient ingredientIn = Ingredient.fromItems(ingredientItem);
+        smeltingAndBlasting(consumer, id, ingredientIn, result);
+    }
+
+    private void smeltingAndBlasting(Consumer<IFinishedRecipe> consumer, String id, ITag<Item> ingredientTag, IItemProvider result) {
+        Ingredient ingredientIn = Ingredient.fromTag(ingredientTag);
+        smeltingAndBlasting(consumer, id, ingredientIn, result);
+    }
+
+    private void smeltingAndBlasting(Consumer<IFinishedRecipe> consumer, String id, Ingredient ingredientIn, IItemProvider result) {
+        CookingRecipeBuilder.blastingRecipe(ingredientIn, result, 1.0f, 100)
+                .addCriterion("impossible", new ImpossibleTrigger.Instance())
+                .build(consumer, Technically.getId("blasting/" + id));
+        CookingRecipeBuilder.smeltingRecipe(ingredientIn, result, 1.0f, 200)
+                .addCriterion("impossible", new ImpossibleTrigger.Instance())
+                .build(consumer, Technically.getId("smelting/" + id));
     }
 
     private void compressor(Consumer<IFinishedRecipe> consumer, IItemProvider large, IItemProvider small,String path){

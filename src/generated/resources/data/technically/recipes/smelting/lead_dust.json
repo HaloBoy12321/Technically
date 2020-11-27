@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "technically:lead_dust"
+  },
+  "result": "technically:lead_ingot",
+  "experience": 1.0,
+  "cookingtime": 200
+}
