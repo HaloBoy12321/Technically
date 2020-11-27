@@ -12,10 +12,28 @@ import net.minecraftforge.fml.RegistryObject;
 import java.util.function.Supplier;
 
 public class ModBlocks {
+    //ore
     public static final RegistryObject<Block> SILVER_ORE = register("silver_ore",() ->
-            new Block(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(3,10).harvestLevel(2).sound(SoundType.STONE)));
+            new Block(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(3,3).harvestLevel(2).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> COPPER_ORE = register("copper_ore",() ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(3,3).harvestLevel(1).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> TIN_ORE = register("tin_ore",() ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(3,3).harvestLevel(2).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> LEAD_ORE = register("lead_ore",() ->
+            new Block(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(3,3).harvestLevel(1).sound(SoundType.STONE)));
+
+    //block of ...
     public static final RegistryObject<Block> SILVER_BLOCK = register("silver_block",() ->
-            new Block(AbstractBlock.Properties.create(Material.IRON).hardnessAndResistance(3,10).sound(SoundType.METAL)));
+            new Block(AbstractBlock.Properties.create(Material.IRON).hardnessAndResistance(5,6).sound(SoundType.METAL)));
+    public static final RegistryObject<Block> COPPER_BLOCK = register("copper_block",() ->
+            new Block(AbstractBlock.Properties.create(Material.IRON).hardnessAndResistance(5,6).sound(SoundType.METAL)));
+    public static final RegistryObject<Block> TIN_BLOCK = register("tin_block",() ->
+            new Block(AbstractBlock.Properties.create(Material.IRON).hardnessAndResistance(5,6).sound(SoundType.METAL)));
+    public static final RegistryObject<Block> LEAD_BLOCK = register("lead_block",() ->
+            new Block(AbstractBlock.Properties.create(Material.IRON).hardnessAndResistance(5,6).sound(SoundType.METAL)));
+
+
+
 
     static void register(){}
 

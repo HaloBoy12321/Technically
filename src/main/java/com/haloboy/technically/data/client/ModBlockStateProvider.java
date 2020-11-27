@@ -13,8 +13,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        //SILVER
         simpleBlock(ModBlocks.SILVER_BLOCK.get());
         simpleBlock(ModBlocks.SILVER_ORE.get());
+        //COPPER
+        simpleBlock(ModBlocks.COPPER_BLOCK.get());
+        simpleBlock(ModBlocks.COPPER_ORE.get());
+        //TIN
+        simpleBlock(ModBlocks.TIN_BLOCK.get());
+        simpleBlock(ModBlocks.TIN_ORE.get());
+        //LEAD
+        simpleBlock(ModBlocks.LEAD_BLOCK.get());
+        simpleBlock(ModBlocks.LEAD_ORE.get());
 
     }
 }

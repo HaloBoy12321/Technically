@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:dusts/silver",
+    "#forge:dusts/copper",
+    "#forge:dusts/tin",
+    "#forge:dusts/lead"
+  ]
+}

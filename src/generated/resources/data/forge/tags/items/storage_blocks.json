@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
+    "#forge:storage_block/silver",
+    "#forge:storage_block/silver",
+    "#forge:storage_block/silver",
     "#forge:storage_block/silver"
   ]
 }
