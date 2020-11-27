@@ -4,6 +4,7 @@ import com.haloboy.technically.setup.ModItems;
 import com.haloboy.technically.setup.Registration;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
@@ -16,11 +17,14 @@ public class Technically {
     public static final String MOD_ID = "technically";
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public static final ItemGroup TAB = new ItemGroup("technicallyTAB"){
+    public static final ItemGroup TAB = new ItemGroup("technically_tab"){
 
         @Override
         public ItemStack createIcon() {return new ItemStack(ModItems.SILVER_INGOT.get());}
     };
+    public static ResourceLocation getId(String path) {
+        return new ResourceLocation(MOD_ID, path);
+    }
 
     public Technically() {
         Registration.register();

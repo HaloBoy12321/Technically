@@ -22,7 +22,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "silver_ingot");
         builder(itemGenerated, "silver_nugget");
         builder(itemGenerated, "silver_dust");
-
         //copper
         withExistingParent("copper_block",modLoc("block/copper_block"));
         withExistingParent("copper_ore",modLoc("block/copper_ore"));

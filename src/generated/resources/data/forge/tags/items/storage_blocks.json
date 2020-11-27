@@ -2,8 +2,20 @@
   "replace": false,
   "values": [
     "#forge:storage_block/silver",
+    "#forge:storage_block/copper",
+    "#forge:storage_block/tin",
+    "#forge:storage_block/lead",
     "#forge:storage_block/silver",
+    "#forge:storage_block/copper",
+    "#forge:storage_block/tin",
+    "#forge:storage_block/lead",
     "#forge:storage_block/silver",
-    "#forge:storage_block/silver"
+    "#forge:storage_block/copper",
+    "#forge:storage_block/tin",
+    "#forge:storage_block/lead",
+    "#forge:storage_block/silver",
+    "#forge:storage_block/copper",
+    "#forge:storage_block/tin",
+    "#forge:storage_block/lead"
   ]
 }

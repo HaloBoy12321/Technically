@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "technically:copper_ingot"
+    }
+  },
+  "result": {
+    "item": "technically:copper_block"
+  }
+}

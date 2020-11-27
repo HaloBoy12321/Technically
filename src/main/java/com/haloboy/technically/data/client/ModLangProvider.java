@@ -17,7 +17,7 @@ public class ModLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add("itemGroup.technicallyTAB", "Technically");
+        add("itemGroup.technically_tab", "Technically");
         for (RegistryObject<Item> object : Registration.ITEMS.getEntries()){
             String ItemKey = object.get().getTranslationKey(); // block.technically.silver_block
             String name = capitalizeString(StringUtils.substringAfter(ItemKey,"technically.").replace("_"," "));
