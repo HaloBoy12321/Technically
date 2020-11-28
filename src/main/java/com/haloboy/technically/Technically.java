@@ -3,6 +3,7 @@ package com.haloboy.technically;
 import com.haloboy.technically.config.ModConfig;
 import com.haloboy.technically.data.util.TechnicallyGroup;
 import com.haloboy.technically.setup.Registration;
+import com.haloboy.technically.world.gen.OreGeneration;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -36,7 +37,7 @@ public class Technically {
     }
     private void modSetup(final FMLCommonSetupEvent event)
     {
-        //OreGenerator.addFeatures();
+        OreGeneration.registerOres();
         LOGGER.info("Technically common setup");
     }
 }

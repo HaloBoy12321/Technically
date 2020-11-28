@@ -15,8 +15,10 @@ apply plugin: 'maven-publish'
 
 version = '1.0'
 group = 'com.haloboy.technically' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+//noinspection GroovyUnusedAssignment
 archivesBaseName = 'technically'
 
+//noinspection GroovyUnusedAssignment
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
@@ -76,11 +78,8 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'technically', '--all',
-                    '--existing', file('src/main/resources').toString(),
-                    '--existing', file('src/main/resources/assets').toString(),
-                    '--existing', file('src/generated/resources').toString(),
-                    '--output', file('src/generated/resources/')
+            //noinspection GroovyAssignabilityCheck
+            args '--mod', 'technically', '--all','--existing', file('src/main/resources').toString(),'--existing', file('src/main/resources/assets').toString(),'--existing', file('src/generated/resources').toString(),'--output', file('src/generated/resources/')
 
             mods {
                 technically {
