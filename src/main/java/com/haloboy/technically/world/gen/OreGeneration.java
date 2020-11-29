@@ -26,7 +26,7 @@ import java.util.ArrayList;
 @Mod.EventBusSubscriber
 public class OreGeneration {
 
-    private static final ArrayList<ConfiguredFeature<?, ?>> overworldOres = new ArrayList<ConfiguredFeature<?, ?>>();
+    private static final ArrayList<ConfiguredFeature<?, ?>> overworldOres = new ArrayList<>();
     //private static final ArrayList<ConfiguredFeature<?, ?>> netherOres = new ArrayList<ConfiguredFeature<?, ?>>();
     //private static final ArrayList<ConfiguredFeature<?, ?>> endOres = new ArrayList<ConfiguredFeature<?, ?>>();
 

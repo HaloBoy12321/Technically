@@ -1,4 +1,4 @@
-package com.haloboy.technically.data.util;
+package com.haloboy.technically.data;
 
 import com.haloboy.technically.setup.ModItems;
 import net.minecraft.item.ItemGroup;
